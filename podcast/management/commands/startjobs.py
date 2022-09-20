@@ -41,6 +41,6 @@ def fetch_the_real_python_podcast_episodes():
 class Command(BaseCommand):
 
     def handle(self, *args, **options):
-        fetch_talk_python_to_me_episodes()
         fetch_the_real_python_podcast_episodes()
+        fetch_talk_python_to_me_episodes()
         
