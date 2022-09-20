@@ -11,7 +11,7 @@ class Episode(models.Model):
     description = models.TextField()
     link = models.URLField()
     image = models.URLField()
-    podcast_name = models.CharField(max_length=100)
+    podcast_name = models.CharField(max_length=125)
     published = models.DateTimeField()
     audio = models.URLField()
     guid = models.CharField(max_length=100)
