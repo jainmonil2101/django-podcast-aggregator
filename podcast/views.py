@@ -7,7 +7,7 @@ from selenium import webdriver
 
 def index(request):
     if request.method == 'GET':
-        driver = webdriver.Chrome()
+        driver = webdriver.Chrome('chromedriver.exe')
         url = driver.current_url
         search = request.GET.get('search', '')
         episodes = Episode.objects.filter(title__icontains=search).order_by('-published')
