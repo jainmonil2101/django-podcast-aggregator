@@ -2,12 +2,13 @@ from django.shortcuts import render, redirect
 from .models import Episode
 from django.core.paginator import Paginator
 from selenium import webdriver
+from sparkradio.settings import BASE_DIR
 
 # Create your views here.
 
 def index(request):
     if request.method == 'GET':
-        driver = webdriver.Chrome('chromedriver.exe')
+        driver = webdriver.Chrome(BASE_DIR / 'chromedriver.exe')
         url = driver.current_url
         search = request.GET.get('search', '')
         episodes = Episode.objects.filter(title__icontains=search).order_by('-published')
