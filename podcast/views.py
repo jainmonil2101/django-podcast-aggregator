@@ -15,3 +15,6 @@ def index(request):
             'episodes':page_obj,            
         }
         return render(request, 'index.html', context)
+
+
+        
