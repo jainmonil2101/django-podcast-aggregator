@@ -56,19 +56,22 @@
           <button class="btn btn-dark border-2" type="submit">Search</button>
         </form>
 
+        <!-- Breadcrumb -->
 
-<!-- Breadcrumb -->
-      
-<nav aria-label="breadcrumb" style="z-index: 999;">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item">
-      <a href="{% url 'index' %}" class="text-decoration-none text-warning">Home</a>
-    </li>
-    <li class="breadcrumb-item active" aria-current="page">Page {{episodes.number}}</li>
-  </ol>
-</nav>
-
-
+        <nav aria-label="breadcrumb" style="z-index: 999">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a
+                href="{% url 'index' %}"
+                class="text-decoration-none text-warning"
+                >Home</a
+              >
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+              Page {{episodes.number}}
+            </li>
+          </ol>
+        </nav>
 
         <!-- Episodes -->
         {% for episode in episodes %}
@@ -117,6 +120,7 @@
           <ul class="pagination d-flex justify-content-between">
             <!-- Previous -->
             {% if episodes.has_previous %}
+
             <li class="page-item">
               <a
                 class="btn btn-outline-warning"
@@ -125,6 +129,7 @@
                 >&#60; Previous</a
               >
             </li>
+
             {% else %}
             <li class="page-item">
               <a class="btn btn-outline-warning disabled" tabindex="-1"
@@ -134,6 +139,7 @@
             {% endif %}
             <!-- Next -->
             {% if episodes.has_next %}
+
             <li class="page-item">
               <a
                 class="btn btn-outline-warning"
@@ -142,6 +148,7 @@
                 >Next &#62;</a
               >
             </li>
+
             {% else %}
             <li class="page-item">
               <a class="btn btn-outline-warning disabled" tabindex="-1"
